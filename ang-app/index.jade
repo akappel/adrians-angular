@@ -1,0 +1,21 @@
+doctype html
+html(lang=en)
+    head
+        title Adrian's Angular
+    body
+        h1 Adrian's Angular
+        ul#messages
+    
+    
+    script(src='/public/libs/angular.min.js')
+    script(src='/public/libs/socket.io.js')
+    script(src='/public/libs/jquery-1.11.3.min.js')
+    script(type='text/javascript').
+        var socket = io();
+        socket.on('client-connected', function(data) {
+          console.log(data.msg);
+        });
+        socket.on('message-received', function(data) {
+          $('#messages').append("<li>" + data.source + "</li>");
+        });
+    
