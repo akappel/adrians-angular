@@ -2,9 +2,11 @@ doctype html
 html(lang=en)
     head
         title Adrian's Angular
+        link(rel='stylesheet', href='public/css/bootstrap.min.css')
+        
     body
         h1 Adrian's Angular
-        ul#messages
+        ul#messages(class='list-group')
     
     
     script(src='/public/libs/angular.min.js')
@@ -12,10 +14,7 @@ html(lang=en)
     script(src='/public/libs/jquery-1.11.3.min.js')
     script(type='text/javascript').
         var socket = io();
-        socket.on('client-connected', function(data) {
-          console.log(data.msg);
-        });
         socket.on('message-received', function(data) {
-          $('#messages').append("<li>" + data.source + "</li>");
+          $('#messages').append($("<li class='list-group-item'>" + data.hello + "</li>").hide().fadeIn());
         });
     

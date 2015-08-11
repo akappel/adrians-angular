@@ -9,11 +9,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.13.3",
     "express": "^4.13.1",
     "jade": "^1.11.0",
+    "mongodb": "^2.0.40",
     "monk": "^1.0.1"
   },
   "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-express": "^0.3.5",
     "morgan": "^1.6.1"
   }
 }
